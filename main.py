@@ -1,15 +1,10 @@
 from pyscript import document, display
 
-# nonmetals = {
-#     "A": ("Argon", 7, 18.2),
-#     "Si": ("Sirgon", 4, 93.22),
-
-
-    # storing multiple data in 1 key by enclosing the values in a tuple
 
 
 def find_element(e):
     element = document.getElementById("Element").value
+    # gets user input value
 
     nonmetals = {
         "H": ("Hydrogen", 1, 1.008),
@@ -31,16 +26,19 @@ def find_element(e):
         "Rn": ("Radon", 86, 222),
     }
 
+    result = nonmetals.get(element, ["Element not found", "-", "-"])
+    # get the corresponding element from the dictionary based on user input
 
-    result = nonmetals.get(element, "Element no found")
-    document.getElementById('info').innerHTML = f'''
-    <b> Symbol: <b> {element}
-    
+    # formatting the output w f string
+    document.getElementById('result').innerHTML = f"""
+    <b> Symbol: <b> {element} <br>
+    <b> Element: <b> {result[0]} <br>
+    <b> Atomic Number: <b> {result[1]} <br>
+    <b> Atomic Mass: <b> {result[2]}
+    """
 
     
-    
-    
-    # display(", ".join(result), target='info')
+
 
 
 
