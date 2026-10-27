@@ -5,18 +5,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://pyscript.net/releases/2026.7.3/core.css" />
     <script type="module" src="https://pyscript.net/releases/2026.7.3/core.js"></script><title>ICT 10</title>
+    
     <style>
+   *  {
+        box-sizing: border-box;
+    }
+    body {
+        margin: 0;
+        min-height: 100vh;
+        background: repeating-linear-gradient(
+            90deg,
+        #baaeff 0px,
+        #baaeff 48px,
+        #b8d6ff 48px,
+        #b8d6ff 96px
+        );
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .box {
+        background: white;
+        width: 380px;
+        padding: 35px 40px;
+        border-radius: 10px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    h1 {
+        text-align: center;
+        color: #333;
+        font-size: 25px;
+        margin-bottom: 5px;
+    }
+
+    label {
+        color: #555;
+        font-size: 14px;
+        margin-bottom: 7px;
+    }
+
+    input {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 14px;;
+    }
+
+    button {
+        width: 100%;
+        padding: 13px;
+        border: none;
+        border-radius: 8px;
+        background: #5d6eea;
+        color: white;
+        font-size: 15px;
+        font-weight: bold;
+    }
+    button:hover {
+      background: #4e5ed8;
+    }
+
+    #result {
+        text-align: start;
+        margin-top: 20px;
+        color: #555;
+        font-size: 14px;}
+
     </style>
+
 </head>
 
 <body>
+    <div class="box">
     <h1>Non-Metal Elements </h1>
     <p>Periodic Table Information Finder</p>
 
     <label></label>
     <input type="text" id="Element">
+    <br><br><br>
     <button py-click="find_element">Show element info</button>
-    <div id="info"></div>
+    <div id="result"></div>
+    </div>
 
     <script type="py" src="main.py"></script>
 </body>
